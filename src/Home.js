@@ -41,9 +41,9 @@ export default class Home extends Component {
         if (this.state.imageArray.length) {
             return this.state.imageArray.map((v, index) => {
                 return (
-                    <TouchableWithoutFeedback onPress={() => this.setState({ isImagePriview: true, isImagePriviewIndex: index })}>
+                    <TouchableWithoutFeedback  key={index} onPress={() => this.setState({ isImagePriview: true, isImagePriviewIndex: index })}>
                         <View style={{ padding: 5 }}>
-                            <Image key={index} source={v} style={{ maxWidth: 75, height: 75 }} />
+                            <Image source={v} style={{ maxWidth: 75, height: 75 }} />
                         </View>
                     </TouchableWithoutFeedback>
                 )
