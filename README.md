@@ -25,3 +25,7 @@
                     targetSdkVersion rootProject.ext.targetSdkVersion
                     versionCode 1
                     versionName "1.0"
+
+- react-native-image-picker [Awsome] [Take Image & Pick Image]
+    - npm i react-native-image-picker
+    - https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md
