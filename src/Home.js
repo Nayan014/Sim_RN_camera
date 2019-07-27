@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
-import { Text, View, Button, Alert, Image, TouchableWithoutFeedback } from 'react-native';
+import { Text, View, Button, Alert, Image, TouchableWithoutFeedback, Modal } from 'react-native';
 
 // Components
 import Camera from './components/Camera';
 
+// Native Camera and gallery
 import ImagePicker from 'react-native-image-picker';
+// Image Virw
+import ImageViewer from 'react-native-image-zoom-viewer';
 
 export default class Home extends Component {
 
     state = {
         isCapturing: false,
         isImagePriview: false,
+        imagePriviewIndex: 0,
         imageArray: []
     }
 
@@ -18,7 +22,13 @@ export default class Home extends Component {
 
         let image = [...this.state.imageArray];
 
-        image.push(data);
+        // for 'react-native-image-zoom-viewer' Plugin
+        let d = { url: data.uri };
+
+        image.push({
+            ...data,
+            ...d
+        });
 
         this.setState({
             imageArray: image,
@@ -50,8 +60,17 @@ export default class Home extends Component {
                 console.log('User tapped custom button: ', response.customButton);
             }
             else {
+
                 let image = [...this.state.imageArray];
-                image.push(response);
+
+                // for 'react-native-image-zoom-viewer' Plugin
+                let d = { url: response.uri };
+
+                image.push({
+                    ...response,
+                    ...d
+                });
+
                 this.setState({
                     imageArray: image,
                     isCapturing: false
@@ -70,6 +89,21 @@ export default class Home extends Component {
 
     _renderImageView = () => {
 
+        if (this.state.isImagePriview) {
+            return (
+                <Modal visible={true} transparent={true}>
+                    <ImageViewer
+                        imageUrls={this.state.imageArray}
+                        index={this.state.imagePriviewIndex}
+                        onSwipeDown={() => {
+                            this.setState({ isImagePriview: false })
+                        }}
+                        enableSwipeDown={true}
+                    />
+                </Modal>
+            )
+        }
+
         return null;
     }
 
@@ -77,7 +111,7 @@ export default class Home extends Component {
         if (this.state.imageArray.length) {
             return this.state.imageArray.map((v, index) => {
                 return (
-                    <TouchableWithoutFeedback key={index} onPress={() => this.setState({ isImagePriview: true, isImagePriviewIndex: index })}>
+                    <TouchableWithoutFeedback key={index} onPress={() => this.setState({ isImagePriview: true, imagePriviewIndex: index })}>
                         <View style={{ padding: 5 }}>
                             <Image source={v} style={{ maxWidth: 75, height: 75 }} />
                         </View>
@@ -126,11 +160,6 @@ export default class Home extends Component {
                 {this._rendercontent()}
                 {this._renderCamera()}
                 {this._renderImageView()}
-
-
-
-
-
             </>
         )
     }

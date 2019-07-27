@@ -1,12 +1,24 @@
-# Custome Camera
+# Custome Camera [Link]
 - Auto focus
 - Tap to focus
 - Image preview
 - Flash
 - Rotate Camera
 
-# Native Camera/Gallery
+# Native Camera/Gallery [Link]
+- Take Image from camera [Native] 
+- Pic image from gallary [Native]
+
+# Image View [Without Link :)]
+- Image Preview
+- Zoom in & out
+- Slide down to close
+- Image count on top
+
+
+# Need to fix
 - react-native-image-picker
+    - taking image in android takes time. :(
 
 
 # Plugins
@@ -33,3 +45,6 @@
     - react-native link react-native-image-picker
         - Refer doc for installaction (especially for IOS)
         - https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md
+
+- react-native-image-viewer [Without Link :)]
+    - npm i react-native-image-zoom-viewer --save
