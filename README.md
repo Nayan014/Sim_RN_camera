@@ -28,4 +28,6 @@
 
 - react-native-image-picker [Awsome] [Take Image & Pick Image]
     - npm i react-native-image-picker
-    - https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md
+    - react-native link react-native-image-picker
+        - Refer doc for installaction (especially for IOS)
+        - https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md
