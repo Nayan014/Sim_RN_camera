@@ -1,10 +1,12 @@
-# Camera
+# Custome Camera
 - Auto focus
 - Tap to focus
 - Image preview
 - Flash
 - Rotate Camera
 
+# Native Camera/Gallery
+- react-native-image-picker
 
 
 # Plugins
@@ -26,7 +28,7 @@
                     versionCode 1
                     versionName "1.0"
 
-- react-native-image-picker [Awsome] [Take Image & Pick Image]
+- react-native-image-picker [Awsome] [Take Image & Pick Image NATIVE]
     - npm i react-native-image-picker
     - react-native link react-native-image-picker
         - Refer doc for installaction (especially for IOS)
