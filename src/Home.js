@@ -99,6 +99,21 @@ export default class Home extends Component {
                             this.setState({ isImagePriview: false })
                         }}
                         enableSwipeDown={true}
+                /*
+                 renderHeader={() => (
+                    <TouchableOpacity
+                      onPress={() => { this.setState({ isImagePriview: false}) }}
+                      style={{ alignItem: 'right',backgroundColor:'black'}}
+                    >
+                      <Ionicons
+                        right
+                        size={25}
+                        name="ios-close"
+                        style={{ color: 'white', textAlign:'right', paddingRight:10, paddingTop: 10 }}
+                      />
+                    </TouchableOpacity>
+                  )}
+                */
                     />
                 </Modal>
             )
