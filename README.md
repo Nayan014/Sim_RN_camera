@@ -19,6 +19,7 @@
 # Need to fix
 - react-native-image-picker
     - taking image in android takes time. :(
+    - Because Android process image :)
 
 
 # Plugins
@@ -44,7 +45,10 @@
     - npm i react-native-image-picker
     - react-native link react-native-image-picker
         - Refer doc for installaction (especially for IOS)
-        - https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md
+            - https://github.com/react-native-community/react-native-image-picker/blob/master/docs/Install.md
+        - ISSUE - App crash
+            - Issue With 1.0.1 use 0.28.0
+            - https://github.com/react-native-community/react-native-image-picker/issues/1122
 
 - react-native-image-viewer [Without Link :)]
     - npm i react-native-image-zoom-viewer --save
