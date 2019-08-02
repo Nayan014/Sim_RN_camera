@@ -30,10 +30,10 @@ http://simdanger.in/
     - $ npm install react-native-camera --save
     - $ react-native link react-native-camera
         - android/app/src/main/AndroidManifest.xml
-            -<uses-permission android:name="android.permission.CAMERA" />
-            -<uses-permission android:name="android.permission.RECORD_AUDIO"/>
-            -<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-            -<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            - ``` <uses-permission android:name="android.permission.CAMERA" /> ```
+            - ``` <uses-permission android:name="android.permission.RECORD_AUDIO"/>```
+            - ```<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />```
+            - ```<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />```
         - android/app/build.gradle
             -  defaultConfig {
                     applicationId "com.cameraexample"
